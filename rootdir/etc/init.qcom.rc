@@ -576,6 +576,7 @@ service qcom-c_main-sh /vendor/bin/init.class_main.sh
 
 on property:vold.decrypt=trigger_restart_framework
     start qcom-c_main-sh
+    start config_bt_addr
     start config_bluetooth
     start cnss_diag
 
@@ -606,6 +607,12 @@ service vendor.rmt_storage /vendor/bin/rmt_storage
 service vendor.tftp_server /vendor/bin/tftp_server
    class core
    user root
+
+service config_bt_addr /system/bin/btnvtool -O
+    class core
+    user bluetooth
+    group bluetooth radio
+    oneshot
 
 service config_bluetooth /system/bin/sh /system/etc/init.qcom.bt.sh "onboot"
     class core
