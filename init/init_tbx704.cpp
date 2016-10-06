@@ -70,6 +70,10 @@ static void set_fingerprint()
 		property_override("ro.product.ota.model", "LenovoTB-X704F_ROW");
         	property_override_dual("persist.multisim.config", "persist.radio.multisim.config", "");
         	property_override("ro.radio.noril", "yes");
+	//for bluetooth
+        	property_override_dual("ro.bluetooth.dun", "ro.bluetooth.sap", "false");
+        	property_override_dual("ro.qualcomm.bluetooth.hfp", "ro.qualcomm.bluetooth.hsp", "false");
+        	property_override("ro.qualcomm.bluetooth.nap", "false");
         } else if (baseband == "msm") {
 		struct sysinfo sys;
 		sysinfo(&sys);
@@ -96,6 +100,10 @@ static void set_fingerprint()
 		}
         	property_override_dual("persist.multisim.config", "persist.radio.multisim.config", "ssss");
         	property_override("ro.radio.noril", "");
+	//for bluetooth
+        	property_override_dual("ro.bluetooth.dun", "ro.bluetooth.sap", "true");
+        	property_override_dual("ro.qualcomm.bluetooth.hfp", "ro.qualcomm.bluetooth.hsp", "true");
+        	property_override("ro.qualcomm.bluetooth.nap", "true");
 	}
 }
 
