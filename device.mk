@@ -35,7 +35,7 @@ PRODUCT_COPY_FILES += \
 
 # Biometrics
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.0-service.tbx704
+    android.hardware.biometrics.fingerprint@2.1-service.tbx704
 
 # Permissions
 PRODUCT_COPY_FILES += \
