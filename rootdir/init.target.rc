@@ -138,6 +138,7 @@ on boot
     chown system drmrpc /sys/devices/soc.0/78b7000.i2c/i2c-3/3-0020/input/input0/secure_touch
     chown system drmrpc /sys/devices/soc.0/78b8000.i2c/i2c-4/4-0020/input/input0/secure_touch_enable
     chown system drmrpc /sys/devices/soc.0/78b8000.i2c/i2c-4/4-0020/input/input0/secure_touch
+    chown system system /sys/devices/virtual/GT9110P/gt9110p/gesture
 
 service wcnss-service /vendor/bin/wcnss_service
     class late_start
@@ -216,6 +217,8 @@ on charger
     start qcom-post-boot
     setprop persist.sys.usb.config mass_storage
     start hvdcp_opti
+#add by chenfei for hqlog JIRA A6090-105 20161117
+    setprop debug.charger.on 1
 
 service dts_configurator /system/bin/dts_configurator
     class late_start

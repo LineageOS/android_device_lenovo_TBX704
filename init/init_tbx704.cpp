@@ -62,25 +62,21 @@ static void set_fingerprint()
 {
 	std::string baseband = GetProperty(PROP_BOOT_BASEBAND, "");
 	if (baseband == "apq") {
-		property_override("ro.build.description", "msm8953_64-user 6.0.1 MMB29M 65 release-keys");
-		property_override("ro.build.product", "TB-8703F");
-		property_override_dual("ro.product.device", "ro.vendor.product.device", "TB-8703F");
-		property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "Lenovo/TB-8703F/TB-8703F:6.0.1/MMB29M/TB-8703F_USR_S035_180326_Q1241_ROW:user/release-keys");
-		property_override_dual("ro.product.model", "ro.vendor.product.model", "Lenovo TB-8703F");
-		property_override("ro.qc.sdk.audio.fluencetype", "none");
-		property_override("persist.audio.fluence.speaker", "true");
+		property_override("ro.build.description", "hq_msm8953_64-user 7.1.1 NMF26F 1581 release-keys");
+		property_override("ro.build.product", "TB-X704F");
+		property_override_dual("ro.product.device", "ro.vendor.product.device", "TB-X704F");
+		property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "Lenovo/LenovoTB-X704F/X704F:7.1.1/NMF26F/TB-X704F_S000056_181015_ROW:user/release-keys");
+		property_override_dual("ro.product.model", "ro.vendor.product.model", "Lenovo TB-X704F");
 	//for installing stock OTA with TWRP
-		property_override("ro.product.ota.model", "LenovoTB-8703F_ROW");
+		property_override("ro.product.ota.model", "LenovoTB-X704F_ROW");
     } else if(baseband == "msm") {
-		property_override("ro.build.description", "msm8953_64-user 6.0.1 MMB29M 559 release-keys");
-		property_override("ro.build.product", "TB-8703X");
-		property_override_dual("ro.product.device", "ro.vendor.product.device", "TB-8703X");
-		property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "Lenovo/TB-8703X/TB-8703X:6.0.1/MMB29M/TB-8703X_USR_S037_180404_Q1241_ROW:user/release-keys");
-		property_override_dual("ro.product.model", "ro.vendor.product.model", "Lenovo TB-8703X");
-		property_override("ro.qc.sdk.audio.fluencetype", "fluence");
-		property_override("persist.audio.fluence.speaker", "false");
+		property_override("ro.build.description", "hq_msm8953_64-user 7.1.1 NMF26F 1580 release-keys");
+		property_override("ro.build.product", "TB-X704L");
+		property_override_dual("ro.product.device", "ro.vendor.product.device", "TB-X704L");
+		property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "Lenovo/LenovoTB-X704L/X704L:7.1.1/NMF26F/TB-X704L_S000056_181015_ROW:user/release-keys");
+		property_override_dual("ro.product.model", "ro.vendor.product.model", "Lenovo TB-X704L");
 		//for installing stock OTA with TWRP
-		property_override("ro.product.ota.model", "LenovoTB-8703X_ROW");
+		property_override("ro.product.ota.model", "LenovoTB-X704L_ROW");
 	}
 }
 

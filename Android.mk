@@ -25,7 +25,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),TB8703)
+ifeq ($(TARGET_DEVICE),TBX704)
 
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 

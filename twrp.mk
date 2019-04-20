@@ -17,4 +17,16 @@
 TARGET_RECOVERY_DEVICE_DIRS += $(DEVICE_PATH)/twrp
 TW_INCLUDE_CRYPTO := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
-TW_THEME := portrait_hdpi
+
+TW_THEME := landscape_hdpi
+TW_DEFAULT_BRIGHTNESS := 128
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+TARGET_RECOVERY_QCOM_RTC_FIX := true
+BOARD_SUPPRESS_SECURE_ERASE := true
+RECOVERY_SDCARD_ON_DATA := true
+#TW_TARGET_USES_QCOM_BSP := true
+TW_DEFAULT_EXTERNAL_STORAGE := true
+TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
+#TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
+TW_HWROTATION := 90
+

@@ -1,0 +1,3 @@
+# hvdcp_opti (quick charger daemon)
+type sysfs_qpnp_vadc, fs_type, sysfs_type;
+type gx_fpd_data_file, file_type, data_file_type;

@@ -18,7 +18,7 @@
 
 set -e
 
-DEVICE=TB8703
+DEVICE=TBX704
 VENDOR=lenovo
 
 # Load extract_utils and do some sanity checks
@@ -59,13 +59,13 @@ fi
 setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" false "$CLEAN_VENDOR"
 
 extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
-extract "$MY_DIR"/proprietary-files-twrp.txt "$SRC" "$SECTION"
+#extract "$MY_DIR"/proprietary-files-twrp.txt "$SRC" "$SECTION"
 
-BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
+#BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
 
-TWRP_QSEECOMD="$BLOB_ROOT"/recovery/root/sbin/qseecomd
+#TWRP_QSEECOMD="$BLOB_ROOT"/recovery/root/sbin/qseecomd
 
-sed -i "s|/system/bin/linker64|/sbin/linker64\x0\x0\x0\x0\x0\x0|g" "$TWRP_QSEECOMD"
+#sed -i "s|/system/bin/linker64|/sbin/linker64\x0\x0\x0\x0\x0\x0|g" "$TWRP_QSEECOMD"
 
 for HIDL_BASE_LIB in $(grep -lr "android\.hidl\.base@1\.0\.so" $BLOB_ROOT); do
     patchelf --remove-needed android.hidl.base@1.0.so "$HIDL_BASE_LIB" || true

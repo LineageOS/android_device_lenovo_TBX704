@@ -1,6 +1,21 @@
 #
-# system.prop for tb8703
+# system.prop for tbx704
 #
+
+# Software buttons
+qemu.hw.mainkeys=0
+
+# ADB debugging
+persist.service.adb.enable=1
+persist.service.debuggable=1
+persist.sys.usb.config=mtp,adb
+sys.usb.config=mtp,adb
+sys.usb.state=mtp,adb
+ro.secure=0
+ro.debuggable=1
+
+# Rotate on lockscreen
+lockscreen.rot_override=true
 
 # Audio
 af.fast_track_multiplier=1
@@ -43,7 +58,8 @@ persist.vendor.cne.feature=1
 # Display
 debug.gralloc.enable_fb_ubwc=1
 ro.opengles.version=196610
-ro.sf.lcd_density=320
+ro.sf.lcd_density=240
+ro.sf.hwrotation=90
 
 # DRM
 drm.service.enabled=1
