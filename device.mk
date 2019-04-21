@@ -89,7 +89,7 @@ PRODUCT_COPY_FILES += \
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm8953 \
-    libmm-omxcore \
+    libmm-qcamera \
     Snap
 
 PRODUCT_PACKAGES += \
