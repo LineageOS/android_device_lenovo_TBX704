@@ -530,7 +530,7 @@ static void mm_channel_process_stream_buf(mm_camera_cmdcb_t * cmd_cb,
                     ch_obj->isConfigCapture = FALSE;
                 }
 
-                if (ch_obj->isConfigCapture && ch_obj->cur_capture_idx < MAX_CAPTURE_BATCH_NUM) {
+                if (ch_obj->isConfigCapture) {
                     if (ch_obj->frameConfig.configs[ch_obj->cur_capture_idx].num_frames != 0) {
                         ch_obj->frameConfig.configs[ch_obj->cur_capture_idx].num_frames--;
                     } else {
@@ -2210,19 +2210,16 @@ int32_t mm_channel_map_stream_buf(mm_channel_t *my_obj,
 {
     int32_t rc = -1;
     mm_stream_t* s_obj = mm_channel_util_get_stream_by_handler(my_obj,
-                                                               payload->stream_id);
+            payload->stream_id);
     if (NULL != s_obj) {
         if (s_obj->ch_obj != my_obj) {
             /* No op. on linked streams */
             return 0;
         }
-
         rc = mm_stream_map_buf(s_obj,
-                               payload->type,
-                               payload->frame_idx,
-                               payload->plane_idx,
-                               payload->fd,
-                               payload->size);
+                payload->type, payload->frame_idx,
+                payload->plane_idx, payload->fd,
+                payload->size, payload->buffer);
     }
 
     return rc;
