@@ -10,3 +10,4 @@
 
 /data/goodix(/.*)?                                              u:object_r:gx_fpd_data_file:s0
 /persist/data/fingerprint/(/.*)?                                u:object_r:gx_fpd_data_file:s0
+
