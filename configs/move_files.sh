@@ -11,4 +11,5 @@ done
 
 # Move variant-specific blobs
 mv /system/vendor/firmware/variant/$baseband/a506_zap* /system/vendor/firmware/
+mv /system/vendor/firmware/variant/$baseband/goodixfp* /system/vendor/firmware/
 rm -rf /system/vendor/firmware/variant
