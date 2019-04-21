@@ -7,7 +7,7 @@ LOCAL_C_INCLUDES := \
     system/core/base/include \
     system/core/init
 LOCAL_CPPFLAGS := -Wall
-LOCAL_SRC_FILES := init_tb8703.cpp
-LOCAL_MODULE := libinit_tb8703
+LOCAL_SRC_FILES := init_tbx704.cpp
+LOCAL_MODULE := libinit_tbx704
 
 include $(BUILD_STATIC_LIBRARY)
