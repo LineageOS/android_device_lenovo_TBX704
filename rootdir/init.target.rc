@@ -216,7 +216,7 @@ on charger
     setprop persist.sys.usb.config mass_storage
     start qcom-post-boot
     setprop persist.sys.usb.config mass_storage
-    start hvdcp_opti
+    start vendor.hvdcp_opti
 #add by chenfei for hqlog JIRA A6090-105 20161117
     setprop debug.charger.on 1
 
@@ -237,10 +237,10 @@ service adsprpcd /vendor/bin/adsprpcd
     user media
     group media
 
-service hvdcp_opti /vendor/bin/hvdcp_opti
+service vendor.hvdcp_opti /vendor/bin/hvdcp_opti
    class main
    user root
-   group root
+   group system wakelock
 
 on property:init.svc.dts_configurator=stopped
     start dtseagleservice
