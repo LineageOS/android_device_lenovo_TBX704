@@ -303,7 +303,7 @@ vendor/lib/libmmcamera_ov5695_qtech2.so
 vendor/lib/libmmcamera_ov8856.so
 
 # Charger
-bin/hvdcp_opti
+bin/hvdcp_opti:vendor/bin/hvdcp_opti
 
 # CNE - from tissot - PKQ1.180917.001.V10.0.4.0.PDHMIXM
 etc/permissions/cneapiclient.xml|15831adf0e80243042b90c734eea0a68eb8ae9c9
