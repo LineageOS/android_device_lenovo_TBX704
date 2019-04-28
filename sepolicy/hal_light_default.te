@@ -1,2 +1,4 @@
-allow hal_light_default sysfs_light:file { create_file_perms };
+allow hal_light_default sysfs_leds:file { create_file_perms };
+allow hal_light_default sysfs_batteryinfo:dir { search };
+allow hal_light_default sysfs_batteryinfo:file { create_file_perms };
 
