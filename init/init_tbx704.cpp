@@ -27,18 +27,18 @@
    IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include <sys/sysinfo.h>
 #include <stdlib.h>
 #include <android-base/properties.h>
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
-#include <stdio.h>
-#include <sys/system_properties.h>
 
 #include "vendor_init.h"
 #include "property_service.h"
 
 #define PROP_BOOT_BASEBAND "ro.boot.baseband"
 using android::base::GetProperty;
+using android::init::property_set;
 
 void property_override(char const prop[], char const value[])
 {
@@ -69,14 +69,34 @@ static void set_fingerprint()
 		property_override_dual("ro.product.model", "ro.vendor.product.model", "Lenovo TB-X704F");
 	//for installing stock OTA with TWRP
 		property_override("ro.product.ota.model", "LenovoTB-X704F_ROW");
-    } else if(baseband == "msm") {
-		property_override("ro.build.description", "hq_msm8953_64-user 7.1.1 NMF26F 1580 release-keys");
-		property_override("ro.build.product", "TB-X704L");
-		property_override_dual("ro.product.device", "ro.vendor.product.device", "TB-X704L");
-		property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "Lenovo/LenovoTB-X704L/X704L:7.1.1/NMF26F/TB-X704L_S000056_181015_ROW:user/release-keys");
-		property_override_dual("ro.product.model", "ro.vendor.product.model", "Lenovo TB-X704L");
-		//for installing stock OTA with TWRP
-		property_override("ro.product.ota.model", "LenovoTB-X704L_ROW");
+        	property_set("persist.radio.multisim.config", "");
+        	property_set("persist.multisim.config", "");
+        } else if (baseband == "msm") {
+		struct sysinfo sys;
+		sysinfo(&sys);
+		if (sys.totalram > 2048ull * 1024 * 1024) {
+			property_override("ro.build.description", "hq_msm8953_64-user 7.1.1 NMF26F 1580 release-keys");
+			property_override("ro.build.product", "TB-X704L");
+			property_override_dual("ro.product.device", "ro.vendor.product.device", "TB-X704L");
+			property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "Lenovo/LenovoTB-X704L/X704L:7.1.1/NMF26F/TB-X704L_S000056_181015_ROW:user/release-keys");
+			property_override_dual("ro.product.model", "ro.vendor.product.model", "Lenovo TB-X704L");
+			//for installing stock OTA with TWRP
+			property_override("ro.product.ota.model", "LenovoTB-X704L_ROW");
+        		property_set("ro.telephony.default_network", "22,20");
+        		property_set("ro.telephony.lteOnCdmaDevice", "1");
+		} else {
+			property_override("ro.build.description", "hq_msm8953_64-user 7.1.1 NMF26F eng.mirror.20171006.072432 release-keys");
+			property_override("ro.build.product", "TB-X704A");
+			property_override_dual("ro.product.device", "ro.vendor.product.device", "TB-X704A");
+			property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "Lenovo/LenovoTB-X704A/X704A:7.1.1/NMF26F/TB-X704A_S000059_171006_ATT:user/release-keys");
+			property_override_dual("ro.product.model", "ro.vendor.product.model", "Lenovo TB-X704A");
+			//for installing stock OTA with TWRP
+			property_override("ro.product.ota.model", "LenovoTB-X704A_ROW");
+        		property_set("ro.telephony.default_network", "12");
+        		property_set("ro.telephony.lteOnCdmaDevice", "0");
+		}
+        	property_set("persist.multisim.config", "ssss");
+        	property_set("persist.radio.multisim.config", "ssss");
 	}
 }
 
