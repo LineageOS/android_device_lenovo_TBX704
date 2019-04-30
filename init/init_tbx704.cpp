@@ -38,7 +38,6 @@
 
 #define PROP_BOOT_BASEBAND "ro.boot.baseband"
 using android::base::GetProperty;
-using android::init::property_set;
 
 void property_override(char const prop[], char const value[])
 {
@@ -69,8 +68,8 @@ static void set_fingerprint()
 		property_override_dual("ro.product.model", "ro.vendor.product.model", "Lenovo TB-X704F");
 	//for installing stock OTA with TWRP
 		property_override("ro.product.ota.model", "LenovoTB-X704F_ROW");
-        	property_set("persist.radio.multisim.config", "");
-        	property_set("persist.multisim.config", "");
+        	property_override_dual("persist.multisim.config", "persist.radio.multisim.config", "");
+        	property_override("ro.radio.noril", "yes");
         } else if (baseband == "msm") {
 		struct sysinfo sys;
 		sysinfo(&sys);
@@ -82,8 +81,8 @@ static void set_fingerprint()
 			property_override_dual("ro.product.model", "ro.vendor.product.model", "Lenovo TB-X704L");
 			//for installing stock OTA with TWRP
 			property_override("ro.product.ota.model", "LenovoTB-X704L_ROW");
-        		property_set("ro.telephony.default_network", "22,20");
-        		property_set("ro.telephony.lteOnCdmaDevice", "1");
+        		property_override("ro.telephony.default_network", "22,20");
+        		property_override("ro.telephony.lteOnCdmaDevice", "1");
 		} else {
 			property_override("ro.build.description", "hq_msm8953_64-user 7.1.1 NMF26F eng.mirror.20171006.072432 release-keys");
 			property_override("ro.build.product", "TB-X704A");
@@ -92,11 +91,11 @@ static void set_fingerprint()
 			property_override_dual("ro.product.model", "ro.vendor.product.model", "Lenovo TB-X704A");
 			//for installing stock OTA with TWRP
 			property_override("ro.product.ota.model", "LenovoTB-X704A_ROW");
-        		property_set("ro.telephony.default_network", "12");
-        		property_set("ro.telephony.lteOnCdmaDevice", "0");
+        		property_override("ro.telephony.default_network", "12");
+        		property_override("ro.telephony.lteOnCdmaDevice", "0");
 		}
-        	property_set("persist.multisim.config", "ssss");
-        	property_set("persist.radio.multisim.config", "ssss");
+        	property_override_dual("persist.multisim.config", "persist.radio.multisim.config", "ssss");
+        	property_override("ro.radio.noril", "");
 	}
 }
 
