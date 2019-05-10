@@ -1,5 +1,5 @@
 # Camera
-/data/vendor/qcam(/.*)?                                                    u:object_r:camera_data_file:s0
+/data/vendor/qcam(/.*)?                                                    u:object_r:vendor_camera_data_file:s0
 
 # DRM
 /vendor/bin/hw/android\.hardware\.drm@1\.1-service\.clearkey               u:object_r:hal_drm_clearkey_exec:s0
