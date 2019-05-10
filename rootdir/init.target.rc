@@ -46,6 +46,7 @@ on fs
     mkdir /mnt/vendor/persist/data 0700 system system
     mkdir /mnt/vendor/persist/bms 0700 root system
     mkdir /mnt/vendor/persist/display 0770 system graphics
+    mkdir /mnt/vendor/persist/hvdcp_opti 0770 root system
     mkdir /mnt/vendor/persist/time 0770 system system
     restorecon_recursive /mnt/vendor/persist
 
@@ -54,9 +55,6 @@ on post-fs-data
     mkdir /persist/data/tz 0700 system system
     mkdir /data/misc/dts 0770 media audio
     mkdir /data/misc/hbtp 0750 system system
-
-    # Create folder for mm-qcamera-daemon
-    mkdir /data/vendor/qcam 0770 camera camera
 
     # Create folder for fingerprint ta
     mkdir /data/fingerprint 0770 root system
@@ -74,13 +72,6 @@ service qfp-daemon /system/bin/qfp-daemon
    class late_start
    user system
    group system drmrpc
-
-# Allow usb charging to be disabled peristently
-on property:persist.usb.chgdisabled=1
-    write /sys/class/power_supply/battery/charging_enabled 0
-
-on property:persist.usb.chgdisabled=0
-    write /sys/class/power_supply/battery/charging_enabled 1
 
 service qrngd /system/bin/qrngd -f
    class main
@@ -244,7 +235,7 @@ service adsprpcd /vendor/bin/adsprpcd
 service vendor.hvdcp_opti /vendor/bin/hvdcp_opti
    class main
    user root
-   group system wakelock
+   group root wakelock
 
 on property:init.svc.dts_configurator=stopped
     start dtseagleservice

@@ -31,12 +31,12 @@
 # start ril-daemon only for targets on which radio is present
 #
 baseband=`getprop ro.baseband`
-sgltecsfb=`getprop persist.radio.sglte_csfb`
-datamode=`getprop persist.data.mode`
+sgltecsfb=`getprop persist.vendor.radio.sglte_csfb`
+datamode=`getprop persist.vendor.data.mode`
 
 case "$baseband" in
     "apq")
-    setprop ro.radio.noril yes
+    setprop ro.vendor.radio.noril yes
     stop ril-daemon
 esac
 
@@ -87,9 +87,9 @@ esac
 
 #
 # Allow persistent faking of bms
-# User needs to set fake bms charge in persist.bms.fake_batt_capacity
+# User needs to set fake bms charge in persist.vendor.bms.fake_batt_capacity
 #
-fake_batt_capacity=`getprop persist.bms.fake_batt_capacity`
+fake_batt_capacity=`getprop persist.vendor.bms.fake_batt_capacity`
 case "$fake_batt_capacity" in
     "") ;; #Do nothing here
     * )
