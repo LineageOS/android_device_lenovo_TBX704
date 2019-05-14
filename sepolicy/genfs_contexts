@@ -30,6 +30,9 @@ genfscon sysfs /devices/soc/qpnp-smbcharger-18/leds                   u:object_r
 # RTC
 genfscon sysfs /devices/soc/qpnp-rtc-8                                u:object_r:sysfs_rtc:s0
 
+# Touchscreen
+genfscon sysfs /devices/virtual/GT9110P/gt9110p                       u:object_r:sysfs_touchpanel:s0
+
 # Wifi
 genfscon sysfs /devices/soc/a000000.qcom,wcnss-wlan                   u:object_r:sysfs_net:s0
 
