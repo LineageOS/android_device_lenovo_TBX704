@@ -4,7 +4,7 @@ for e in $(cat /proc/cmdline);
 do
     tmp=$(echo $e | grep "androidboot.baseband" > /dev/null);
     if [ "0" == "$?" ]; then
-        baseband=$(echo $e |cut -d":" -f0 |cut -d"=" -f2);
+        baseband=$(echo $e |cut -d":" -f1 |cut -d"=" -f2);
     fi
 done
 
