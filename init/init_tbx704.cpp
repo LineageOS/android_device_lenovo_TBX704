@@ -63,7 +63,7 @@ static void set_fingerprint()
 	if (baseband == "apq") {
 		property_override("ro.build.description", "hq_msm8953_64-user 7.1.1 NMF26F 1581 release-keys");
 		property_override("ro.build.product", "TB-X704F");
-		property_override_dual("ro.product.device", "ro.vendor.product.device", "TB-X704F");
+		property_override_dual("ro.product.device", "ro.vendor.product.device", "X704F");
 		property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "Lenovo/LenovoTB-X704F/X704F:7.1.1/NMF26F/TB-X704F_S000056_181015_ROW:user/release-keys");
 		property_override_dual("ro.product.model", "ro.vendor.product.model", "Lenovo TB-X704F");
 	//for installing stock OTA with TWRP
@@ -80,7 +80,7 @@ static void set_fingerprint()
 		if (sys.totalram > 2048ull * 1024 * 1024) {
 			property_override("ro.build.description", "hq_msm8953_64-user 7.1.1 NMF26F 1580 release-keys");
 			property_override("ro.build.product", "TB-X704L");
-			property_override_dual("ro.product.device", "ro.vendor.product.device", "TB-X704L");
+			property_override_dual("ro.product.device", "ro.vendor.product.device", "X704L");
 			property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "Lenovo/LenovoTB-X704L/X704L:7.1.1/NMF26F/TB-X704L_S000056_181015_ROW:user/release-keys");
 			property_override_dual("ro.product.model", "ro.vendor.product.model", "Lenovo TB-X704L");
 			//for installing stock OTA with TWRP
@@ -90,7 +90,7 @@ static void set_fingerprint()
 		} else {
 			property_override("ro.build.description", "hq_msm8953_64-user 7.1.1 NMF26F eng.mirror.20171006.072432 release-keys");
 			property_override("ro.build.product", "TB-X704A");
-			property_override_dual("ro.product.device", "ro.vendor.product.device", "TB-X704A");
+			property_override_dual("ro.product.device", "ro.vendor.product.device", "X704A");
 			property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "Lenovo/LenovoTB-X704A/X704A:7.1.1/NMF26F/TB-X704A_S000059_171006_ATT:user/release-keys");
 			property_override_dual("ro.product.model", "ro.vendor.product.model", "Lenovo TB-X704A");
 			//for installing stock OTA with TWRP
