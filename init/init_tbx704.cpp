@@ -63,24 +63,20 @@ static void set_fingerprint()
 	if (baseband == "apq") {
 		property_override("ro.build.description", "hq_msm8953_64-user 7.1.1 NMF26F 1581 release-keys");
 		property_override("ro.build.product", "TB-X704F");
-		property_override_dual("ro.product.device", "ro.vendor.product.device", "X704F");
+		property_override_dual("ro.product.device", "ro.vendor.product.device", "TB-X704F");
 		property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "Lenovo/LenovoTB-X704F/X704F:7.1.1/NMF26F/TB-X704F_S000056_181015_ROW:user/release-keys");
 		property_override_dual("ro.product.model", "ro.vendor.product.model", "Lenovo TB-X704F");
 	//for installing stock OTA with TWRP
 		property_override("ro.product.ota.model", "LenovoTB-X704F_ROW");
         	property_override_dual("persist.multisim.config", "persist.radio.multisim.config", "");
         	property_override("ro.radio.noril", "yes");
-	//for bluetooth
-        	property_override_dual("ro.bluetooth.dun", "ro.bluetooth.sap", "false");
-        	property_override_dual("ro.qualcomm.bluetooth.hfp", "ro.qualcomm.bluetooth.hsp", "false");
-        	property_override("ro.qualcomm.bluetooth.nap", "false");
         } else if (baseband == "msm") {
 		struct sysinfo sys;
 		sysinfo(&sys);
 		if (sys.totalram > 2048ull * 1024 * 1024) {
 			property_override("ro.build.description", "hq_msm8953_64-user 7.1.1 NMF26F 1580 release-keys");
 			property_override("ro.build.product", "TB-X704L");
-			property_override_dual("ro.product.device", "ro.vendor.product.device", "X704L");
+			property_override_dual("ro.product.device", "ro.vendor.product.device", "TB-X704L");
 			property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "Lenovo/LenovoTB-X704L/X704L:7.1.1/NMF26F/TB-X704L_S000056_181015_ROW:user/release-keys");
 			property_override_dual("ro.product.model", "ro.vendor.product.model", "Lenovo TB-X704L");
 			//for installing stock OTA with TWRP
@@ -90,7 +86,7 @@ static void set_fingerprint()
 		} else {
 			property_override("ro.build.description", "hq_msm8953_64-user 7.1.1 NMF26F eng.mirror.20171006.072432 release-keys");
 			property_override("ro.build.product", "TB-X704A");
-			property_override_dual("ro.product.device", "ro.vendor.product.device", "X704A");
+			property_override_dual("ro.product.device", "ro.vendor.product.device", "TB-X704A");
 			property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "Lenovo/LenovoTB-X704A/X704A:7.1.1/NMF26F/TB-X704A_S000059_171006_ATT:user/release-keys");
 			property_override_dual("ro.product.model", "ro.vendor.product.model", "Lenovo TB-X704A");
 			//for installing stock OTA with TWRP
@@ -100,10 +96,6 @@ static void set_fingerprint()
 		}
         	property_override_dual("persist.multisim.config", "persist.radio.multisim.config", "ssss");
         	property_override("ro.radio.noril", "");
-	//for bluetooth
-        	property_override_dual("ro.bluetooth.dun", "ro.bluetooth.sap", "true");
-        	property_override_dual("ro.qualcomm.bluetooth.hfp", "ro.qualcomm.bluetooth.hsp", "true");
-        	property_override("ro.qualcomm.bluetooth.nap", "true");
 	}
 }
 
