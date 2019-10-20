@@ -50,7 +50,7 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 9652641280
 TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/GT9110P/gt9110p/gesture"
 
 # SELinux
-BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
+#BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # Inherit from the proprietary version
 -include vendor/lenovo/TBX704/BoardConfigVendor.mk
