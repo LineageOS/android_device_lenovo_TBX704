@@ -2,7 +2,7 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := android.hardware.biometrics.fingerprint@2.1-service.tbx704
-LOCAL_INIT_RC := android.hardware.biometrics.fingerprint@2.1-service.rc
+LOCAL_INIT_RC := android.hardware.biometrics.fingerprint@2.1-service.lenovo_tbx704.rc
 LOCAL_MODULE_RELATIVE_PATH := hw
 
 LOCAL_VENDOR_MODULE := true
