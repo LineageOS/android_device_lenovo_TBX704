@@ -271,7 +271,7 @@ bin/hvdcp_opti:vendor/bin/hvdcp_opti
 
 # Fingerprint
 bin/gx_fpd:vendor/bin/gx_fpd
-lib64/hw/fingerprint.default.so:vendor/lib64/hw/fingerprint.default.so
+lib64/hw/fingerprint.default.so:vendor/lib64/hw/fingerprint.msm8953.so
 lib64/hw/gxfingerprint.default.so:vendor/lib64/hw/gxfingerprint.default.so
 lib64/libfp_client.so:vendor/lib64/libfp_client.so
 lib64/libfpservice.so:vendor/lib64/libfpservice.so
