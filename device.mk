@@ -35,7 +35,10 @@ PRODUCT_COPY_FILES += \
 
 # Biometrics
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.lenovo_tbx704
+    android.hardware.biometrics.fingerprint@2.1 \
+    android.hidl.base@1.0 \
+    libclang_rt.ubsan_standalone-aarch64-android \
+    libunwind
 
 # Permissions
 PRODUCT_COPY_FILES += \
