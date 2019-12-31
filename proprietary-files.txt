@@ -270,11 +270,20 @@ vendor/lib/libmmcamera_ov8856.so
 bin/hvdcp_opti:vendor/bin/hvdcp_opti
 
 # Fingerprint
-bin/gx_fpd:vendor/bin/gx_fpd
-lib64/hw/fingerprint.default.so:vendor/lib64/hw/fingerprint.msm8953.so
-lib64/hw/gxfingerprint.default.so:vendor/lib64/hw/gxfingerprint.default.so
-lib64/libfp_client.so:vendor/lib64/libfp_client.so
-lib64/libfpservice.so:vendor/lib64/libfpservice.so
+lib64/hw/gf_fingerprint.default.so
+lib64/libgf_algo.so
+lib64/libgf_ca.so
+lib64/libgf_hal.so
+lib64/libgoodixfingerprintd_binder.so
+lib64/libsoftkeymaster.so
+vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service.lenovo_tbx704
+vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.lenovo_tbx704.rc
+vendor/etc/permissions/com.fingerprints.extension.xml
+vendor/framework/com.fingerprints.extension.jar
+vendor/lib64/com.fingerprints.extension@1.0.so
+vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so
+vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0.so
+vendor/lib64/hw/fingerprint.goodix.so
 
 # Fingerprint firmware TB-X704L
 etc/firmware/goodixfp.b00:vendor/firmware/variant/msm/goodixfp.b00
