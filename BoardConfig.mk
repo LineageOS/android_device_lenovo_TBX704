@@ -45,6 +45,8 @@ TARGET_KERNEL_CONFIG := lineageos_tbx704_defconfig
 # Partitions
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 4294967296
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 9652641280
+BOARD_ROOT_EXTRA_SYMLINKS += \
+    /mnt/vendor/persist:/persist
 
 # Power
 TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/GT9110P/gt9110p/gesture"
